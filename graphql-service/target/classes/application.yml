@@ -1,0 +1,30 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:5432/${DB_NAME:graphqldb}
+    username: ${DB_USER:benchmark}
+    password: ${DB_PASS:benchmark}
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate.jdbc.time_zone: UTC
+  sql:
+    init:
+      mode: always
+  graphql:
+    path: /graphql
+    schema:
+      locations: classpath:graphql/
+    graphiql:
+      enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus

@@ -1,0 +1,18 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: rest-service
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ["rest-service:8081"]
+
+  - job_name: graphql-service
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ["graphql-service:8082"]
+
+  - job_name: grpc-service
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ["grpc-service:8083"]

@@ -32,13 +32,13 @@ The services expose health and metrics endpoints and export traces through the O
 
 ## Prerequisites
 
-To run the full stack locally you need:
+To run the full stack locally, the following are required:
 
 - Java 21
 - Maven 3.9+
+- OpenTelemetry Java agent JAR [`opentelemetry-javaagent.jar`](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar)
 - Docker and Docker Compose
 - k6 for benchmarks
-- `psql` if you want to seed the databases manually from the benchmark scripts
 
 ## Build
 

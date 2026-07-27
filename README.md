@@ -53,9 +53,7 @@ mvn clean package
 Start the observability and database services together with the application services:
 
 ```bash
-docker compose up -d postgres otel-collector jaeger prometheus grafana
-docker compose build rest-service graphql-service grpc-service
-docker compose up -d rest-service graphql-service grpc-service
+docker compose up
 ```
 
 Health checks:
